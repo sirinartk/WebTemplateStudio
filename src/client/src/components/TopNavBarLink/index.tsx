@@ -40,12 +40,14 @@ const TopNavBarLink = ({
       className={styles.container}
       onKeyUp={keyUpHandler}
     >
-      <div
+      <section
         className={classnames(styles.text, {
           [styles.textSelected]: isSelected
         })}
         aria-label={intl.formatMessage(
-          ARIA_LABELS_NAVIGATION.ARIA_LABELS_MESSAGES,
+          isSelected
+            ? ARIA_LABELS_NAVIGATION.ARIA_LABELS_CURRENT_PAGE
+            : ARIA_LABELS_NAVIGATION.ARIA_LABELS_MESSAGES,
           {
             pagesText: intl.formatMessage({
               id: "ariaLabelForLink",
@@ -70,7 +72,7 @@ const TopNavBarLink = ({
         >
           {text}
         </div>
-      </div>
+      </section>
     </Link>
   );
 };
