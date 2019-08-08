@@ -142,6 +142,7 @@
   "constants.emptyField",
   "ariaLabels.pageNavigation",
   "ariaLabels.currentPage",
+  "ariaLabels.disabledPage",
   "pageNameError.duplicateName",
   "pageNameError.emptyName",
   "pageNameError.invalidRegex",

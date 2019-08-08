@@ -39,22 +39,34 @@ const TopNavBarLink = ({
       onClick={handleClick}
       className={styles.container}
       onKeyUp={keyUpHandler}
+      aria-label={
+        visitedCheck || isSelected
+          ? intl.formatMessage(
+              isSelected
+                ? ARIA_LABELS_NAVIGATION.ARIA_LABELS_CURRENT_PAGE
+                : ARIA_LABELS_NAVIGATION.ARIA_LABELS_MESSAGES,
+              {
+                pagesText: intl.formatMessage({
+                  id: "ariaLabelForLink",
+                  defaultMessage: text
+                })
+              }
+            )
+          : intl.formatMessage(
+              ARIA_LABELS_NAVIGATION.ARIA_LABELS_DISABLED_PAGE,
+              {
+                pagesText: intl.formatMessage({
+                  id: "ariaLabelForLink",
+                  defaultMessage: text
+                })
+              }
+            )
+      }
     >
       <section
         className={classnames(styles.text, {
           [styles.textSelected]: isSelected
         })}
-        aria-label={intl.formatMessage(
-          isSelected
-            ? ARIA_LABELS_NAVIGATION.ARIA_LABELS_CURRENT_PAGE
-            : ARIA_LABELS_NAVIGATION.ARIA_LABELS_MESSAGES,
-          {
-            pagesText: intl.formatMessage({
-              id: "ariaLabelForLink",
-              defaultMessage: text
-            })
-          }
-        )}
       >
         <div
           className={classnames(styles.pageNumber, {

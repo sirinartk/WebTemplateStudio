@@ -41,6 +41,10 @@ const ARIA_LABELS_NAVIGATION = defineMessages({
   ARIA_LABELS_CURRENT_PAGE: {
     id: "ariaLabels.currentPage",
     defaultMessage: "Currently on {pagesText} page"
+  },
+  ARIA_LABELS_DISABLED_PAGE: {
+    id: "ariaLabels.disabledPage",
+    defaultMessage: "{pagesText} page disabled"
   }
 });
 
