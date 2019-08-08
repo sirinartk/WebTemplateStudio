@@ -3,7 +3,8 @@
   margin-bottom: 12px;
   cursor: pointer;
   padding: 12px;
-  background-color: hsla(0, 0%, 47%, 0.3);
+  background-color: hsla(0, 0%, 47%, 0.2);
+  outline: 1px var(--vscode-contrastActiveBorder);
 }
 
 .container:focus {
