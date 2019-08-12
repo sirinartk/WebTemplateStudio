@@ -355,8 +355,10 @@ const AppServiceModal = (props: Props) => {
   };
 
   const getDropdownSection = (
+    id: string,
     leftHeader: string,
     options: any,
+    nextItem: string,
     formSectionId: string,
     ariaLabel: string,
     rightHeader?: string,
@@ -385,6 +387,7 @@ const AppServiceModal = (props: Props) => {
         </div>
         <div className={styles.subLabel}>{subLabel}</div>
         <Dropdown
+          id={id}
           ariaLabel={ariaLabel}
           options={options}
           handleChange={option => {
@@ -397,6 +400,7 @@ const AppServiceModal = (props: Props) => {
           }
           disabled={disabled}
           openDropdownUpwards={openDropdownUpwards}
+          nextItem={nextItem}
         />
       </div>
     );
@@ -457,8 +461,10 @@ const AppServiceModal = (props: Props) => {
       <div className={styles.bodyContainer}>
         {/* Subscription */}
         {getDropdownSection(
+          "appServiceFormSubscription",
           FORM_CONSTANTS.SUBSCRIPTION.label,
           appServiceData.subscription,
+          "appServiceFormResourceGroupRadioBox",
           FORM_CONSTANTS.SUBSCRIPTION.value,
           intl.formatMessage(
             azureModalMessages.azureModalAriaSubscriptionLabel
@@ -475,6 +481,7 @@ const AppServiceModal = (props: Props) => {
             [styles.selectionContainerDisabled]:
               appServiceFormData.subscription.value === ""
           })}
+          id="appServiceFormResourceGroupRadioBox"
         >
           <div className={styles.selectionHeaderContainer}>
             <div className={styles.leftHeader}>
@@ -521,6 +528,7 @@ const AppServiceModal = (props: Props) => {
           <div className={styles.resourceGroupToggleContainer}>
             {appServiceFormData.chooseExistingRadioButtonSelected ? (
               <Dropdown
+                id="appServiceFormChooseResourceGroup"
                 ariaLabel={intl.formatMessage(
                   azureModalMessages.azureModalAriaResourceGroupLabel
                 )}
@@ -535,6 +543,7 @@ const AppServiceModal = (props: Props) => {
                 }
                 disabled={appServiceFormData.subscription.value === ""}
                 openDropdownUpwards={false}
+                nextItem="appServiceFormAppName"
               />
             ) : (
               intl.formatMessage(
@@ -545,6 +554,7 @@ const AppServiceModal = (props: Props) => {
         </div>
         {/* Site Name */}
         <div
+          id="appServiceFormAppName"
           className={classNames(
             styles.selectionInputContainer,
             styles.selectionContainer,

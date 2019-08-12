@@ -7,6 +7,7 @@ import dropdownstyles from "./dropdownstyles";
 import styles from "./styles.module.css";
 
 interface IDropdownProps {
+  id: string;
   options: IDropDownOptionType[];
   disabled?: boolean;
   defaultValue?: IDropDownOptionType;
@@ -14,6 +15,7 @@ interface IDropdownProps {
   value?: IDropDownOptionType | undefined;
   ariaLabel: string;
   openDropdownUpwards?: boolean;
+  nextItem: string;
 }
 
 const DropdownIndicator = (props: any) => {
@@ -27,16 +29,19 @@ const DropdownIndicator = (props: any) => {
 };
 
 const Dropdown = ({
+  id,
   options,
   defaultValue,
   handleChange,
   value,
   disabled,
   ariaLabel,
-  openDropdownUpwards
+  openDropdownUpwards,
+  nextItem
 }: IDropdownProps) => {
   return (
     <Select
+      id={id}
       aria-label={ariaLabel}
       components={{ DropdownIndicator }}
       value={value}
@@ -47,6 +52,7 @@ const Dropdown = ({
       options={options}
       menuPlacement={openDropdownUpwards ? "top" : "auto"}
       isDisabled={disabled}
+      aria-flowto={nextItem}
     />
   );
 };

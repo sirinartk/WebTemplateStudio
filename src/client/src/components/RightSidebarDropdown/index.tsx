@@ -7,6 +7,7 @@ import { ISelected } from "../../types/selected";
 import { IOption } from "../../types/option";
 
 interface IProps {
+  id: string;
   handleDropdownChange: (
     dropdownTitle: IDropDownOptionType,
     selectDropdownOption: (dropDrownItem: ISelected) => void,
@@ -19,6 +20,7 @@ interface IProps {
   value: IDropDownOptionType;
   disabled?: boolean;
   optionsData: IOption[];
+  nextItem: string;
 }
 
 const RightSidebarDropdown = (props: IProps) => {
@@ -28,6 +30,7 @@ const RightSidebarDropdown = (props: IProps) => {
         <div className={styles.sidebarItem}>
           <div className={styles.dropdownTitle}>{props.title}</div>
           <Dropdown
+            id={props.id}
             handleChange={dropDrownItem => {
               props.handleDropdownChange(
                 dropDrownItem,
@@ -39,6 +42,7 @@ const RightSidebarDropdown = (props: IProps) => {
             ariaLabel={props.title}
             options={props.options}
             value={props.value}
+            nextItem={props.nextItem}
           />
         </div>
       )}

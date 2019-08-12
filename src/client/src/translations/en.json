@@ -147,6 +147,7 @@
   "quickStart.button": "Quick Start Web Project",
   "quickStart.description": "To get started quickly with your preferred frameworks and just a blank page, use quick start.",
   "quickStart.optional": "OPTIONAL",
+  "redirectLabel.generic": "here",
   "redirectModal.OK": "OK",
   "redirectModal.beingRedirected": "You are being redirected.",
   "redirectModal.noneThirdPartyWebsite": "The link will take you out of the wizard",

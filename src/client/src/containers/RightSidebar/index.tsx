@@ -274,6 +274,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                 </div>
                 <div className={styles.decoratedLine} />
                 <RightSidebarDropdown
+                  id="rightSideFrontendDropdown"
                   options={this.props.frontendDropdownItems}
                   handleDropdownChange={
                     (showPages && this.handleFrameworkChange) ||
@@ -287,8 +288,10 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                   )}
                   optionsData={frontendOptions}
                   disabled={!isValidNameAndProjectPath}
+                  nextItem="rightSideBarBackendDropdown"
                 />
                 <RightSidebarDropdown
+                  id="rightSideBarBackendDropdown"
                   options={this.props.backendDropdownItems}
                   handleDropdownChange={this.handleChange}
                   selectDropdownOption={this.props.selectBackendFramework}
@@ -298,8 +301,12 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                     this.props.selection.backendFramework
                   )}
                   optionsData={backendOptions}
+                  nextItem="rightSideBarSortablePages"
                 />
-                <div className={styles.sortablePages}>
+                <div
+                  id="rightSideBarSortablePages"
+                  className={styles.sortablePages}
+                >
                   {showPages && (
                     <SortablePageList
                       handleResetPages={this.resetAllPages}

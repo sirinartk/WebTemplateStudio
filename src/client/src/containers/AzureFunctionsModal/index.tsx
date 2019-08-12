@@ -387,7 +387,7 @@ const AzureFunctionsResourceModal = (props: Props) => {
           )}
         </div>
         <div className={styles.subLabel}>{subLabel}</div>
-        <Dropdown
+        {/* <Dropdown
           ariaLabel={ariaLabel}
           options={options}
           handleChange={option => {
@@ -400,7 +400,7 @@ const AzureFunctionsResourceModal = (props: Props) => {
           }
           disabled={disabled}
           openDropdownUpwards={openDropdownUpwards}
-        />
+        /> */}
       </div>
     );
   };
@@ -535,7 +535,7 @@ const AzureFunctionsResourceModal = (props: Props) => {
             </div>
           </div>
           <div className={styles.resourceGroupToggleContainer}>
-            {azureFunctionsFormData.chooseExistingRadioButtonSelected ? (
+            {/* {azureFunctionsFormData.chooseExistingRadioButtonSelected ? (
               <Dropdown
                 ariaLabel={props.intl.formatMessage(
                   azureModalMessages.azureModalAriaResourceGroupLabel
@@ -559,7 +559,7 @@ const AzureFunctionsResourceModal = (props: Props) => {
               props.intl.formatMessage(
                 azureModalMessages.azureModalCreateNewResourceGroupSelectedDisplayMessage
               )
-            )}
+            )} */}
           </div>
         </div>
         {/* App Name */}

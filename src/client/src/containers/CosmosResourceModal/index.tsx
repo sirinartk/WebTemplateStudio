@@ -343,10 +343,12 @@ const CosmosResourceModal = (props: Props) => {
     props.saveCosmosOptions(cosmosFormData);
   };
   const getDropdownSection = (
+    id: string,
     leftHeader: string,
     options: any,
     formSectionId: string,
     ariaLabel: string,
+    nextItem: string,
     rightHeader?: string,
     disabled?: boolean,
     defaultValue?: any,
@@ -374,6 +376,7 @@ const CosmosResourceModal = (props: Props) => {
         </div>
         <div className={styles.subLabel}>{subLabel}</div>
         <Dropdown
+          id={id}
           ariaLabel={ariaLabel}
           options={options}
           handleChange={option => {
@@ -386,6 +389,7 @@ const CosmosResourceModal = (props: Props) => {
           }
           disabled={disabled}
           openDropdownUpwards={openDropdownUpwards}
+          nextItem={nextItem}
         />
       </div>
     );
@@ -447,12 +451,14 @@ const CosmosResourceModal = (props: Props) => {
       <div className={styles.bodyContainer}>
         {/* Subscription */}
         {getDropdownSection(
+          "cosmosFormSubscription",
           FORM_CONSTANTS.SUBSCRIPTION.label,
           cosmosData.subscription,
           FORM_CONSTANTS.SUBSCRIPTION.value,
           props.intl.formatMessage(
             azureModalMessages.azureModalAriaSubscriptionLabel
           ),
+          "cosmosFormResourceGroup",
           props.intl.formatMessage(azureModalMessages.azureModalCreateNew),
           false,
           DEFAULT_VALUE,
@@ -464,6 +470,7 @@ const CosmosResourceModal = (props: Props) => {
         {/* Choose Resource Group */}
         {
           <div
+            id="cosmosFormResourceGroup"
             className={classnames([styles.selectionContainer], {
               [styles.selectionContainerDisabled]:
                 cosmosFormData.subscription.value === ""
@@ -527,6 +534,7 @@ const CosmosResourceModal = (props: Props) => {
             <div className={styles.resourceGroupToggleContainer}>
               {cosmosFormData.chooseExistingRadioButtonSelected ? (
                 <Dropdown
+                  id="cosmosFormChooseExistingResourceGroup"
                   ariaLabel={props.intl.formatMessage(
                     azureModalMessages.azureModalAriaResourceGroupLabel
                   )}
@@ -544,6 +552,7 @@ const CosmosResourceModal = (props: Props) => {
                   }
                   disabled={cosmosFormData.subscription.value === ""}
                   openDropdownUpwards={false}
+                  nextItem="cosmosFormAccountName"
                 />
               ) : (
                 props.intl.formatMessage(
@@ -555,6 +564,7 @@ const CosmosResourceModal = (props: Props) => {
         }
         {/* Account Name */}
         <div
+          id="cosmosFormAccountName"
           className={classnames(
             styles.selectionInputContainer,
             styles.selectionContainer,
@@ -609,12 +619,14 @@ const CosmosResourceModal = (props: Props) => {
         </div>
         {/* Location */}
         {getDropdownSection(
+          "cosmosFormLocation",
           FORM_CONSTANTS.LOCATION.label,
           cosmosData.location,
           FORM_CONSTANTS.LOCATION.value,
           props.intl.formatMessage(
             azureModalMessages.azureModalAriaLocationLabel
           ),
+          "cosmosFormApi",
           undefined,
           cosmosFormData.subscription.value === "",
           DEFAULT_VALUE,
@@ -623,10 +635,12 @@ const CosmosResourceModal = (props: Props) => {
         )}
         {/* API */}
         {getDropdownSection(
+          "cosmosFormApi",
           FORM_CONSTANTS.API.label,
           cosmosData.api,
           FORM_CONSTANTS.API.value,
           props.intl.formatMessage(messages.ariaApiLabel),
+          "cosmosFormSave",
           undefined,
           false,
           DEFAULT_VALUE,
@@ -635,6 +649,7 @@ const CosmosResourceModal = (props: Props) => {
         )}
         {/* Save Button */}
         <button
+          id="cosmosFormSave"
           className={getButtonClassNames()}
           disabled={!formIsSendable}
           onClick={handleAddResource}
