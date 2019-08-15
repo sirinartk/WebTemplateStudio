@@ -27,7 +27,12 @@
 }
 
 .buttonBack {
-  background: var(--vscode-editor-background);
+  background: var(--vscode-back-button-background);
+  color: var(--vscode-editor-foreground) !important;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border: none;
 }
 
 .button:focus {

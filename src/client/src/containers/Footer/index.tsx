@@ -263,7 +263,6 @@ class Footer extends React.Component<Props> {
                 <Link
                   tabIndex={0}
                   className={classnames(
-                    buttonStyles.buttonDark,
                     styles.button,
                     styles.buttonBack
                   )}

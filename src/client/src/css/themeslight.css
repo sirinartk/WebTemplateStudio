@@ -25,6 +25,7 @@
   --vscode-dropdown-border: #cecece;
   --vscode-dropdown-foreground: #f0f0f0;
   --vscode-editor-background: #ffffff;
+  --vscode-back-button-background: #ffffff;
   --vscode-editor-findMatchBackground: #a8ac94;
   --vscode-editor-findMatchHighlightBackground: rgba(234, 92, 0, 0.33);
   --vscode-editor-findRangeHighlightBackground: rgba(180, 180, 180, 0.3);

@@ -73,6 +73,15 @@
           "light": "#c8c8c8",
           "highContrast": "#800000"
         }
+      },
+      {
+        "id": "back.button.background",
+        "description": "Color for back button in the footer.",
+        "defaults": {
+          "dark": "#1e1e1e",
+          "light": "#ffffff",
+          "highContrast": "#800000"
+        }
       }
     ],
     "configuration": {
