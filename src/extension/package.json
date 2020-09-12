@@ -134,7 +134,7 @@
     "log4js": "^4.1.0",
     "ms-rest": "^2.5.0",
     "ms-rest-azure": "^2.6.0",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.1",
     "opn": "^5.5.0",
     "portfinder": "^1.0.20",
     "rimraf": "^2.6.3",
