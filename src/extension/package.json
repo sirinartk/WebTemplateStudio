@@ -133,7 +133,7 @@
     "global": "^4.3.2",
     "log4js": "^4.1.0",
     "ms-rest": "^2.5.0",
-    "ms-rest-azure": "^2.6.0",
+    "ms-rest-azure": "^2.6.2",
     "node-fetch": "^2.3.0",
     "opn": "^5.5.0",
     "portfinder": "^1.0.20",
